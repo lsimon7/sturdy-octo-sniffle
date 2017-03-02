@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootcont</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="container">
+    <nav class="navbar navbar-success">
+  
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><%= image_tag 'rails.png', alt: 'The Major Depot' %></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Root</a></li>
+      <li><a href="/store/index">Store</a></li>
+      <li><a href="/carts">Carts</a></li>
+      <li><a href="/line_items">Line Items</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/Dimensional+Model.pdf">404 Product</a></li>
+    </ul>
+  
+    </nav>
+    <div>
+    <%= yield %>
+    
+    </div>
+  </body>
+</html>
+

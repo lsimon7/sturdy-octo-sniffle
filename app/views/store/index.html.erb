@@ -1,0 +1,30 @@
+<h1>Store#index</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Your Pragmatic Catalog</h1>
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |produce| %>
+      <tr>
+        <td><%= produce.title %></td>
+        <td><%= (sanitize(produce.description)) %></td>
+        <td><%= image_tag(produce.image_url) %></td>
+        <td><%= number_to_currency(produce.price) %><%= button_to 'Add to Cart', line_items_path(product_id: produce) %></td>
+        <td><%= link_to 'Show', produce , class:"btn btn-xs btn-danger" %>
+        <%= link_to 'Edit', edit_product_path(produce) , class:"btn btn-xs btn-danger" %>
+        <%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-xs btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
