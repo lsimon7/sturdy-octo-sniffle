@@ -21,6 +21,12 @@
       <li><a href="/line_items">Line Items</a></li>
       <li><a href="/products">Products</a></li>
       <li><a href="/Dimensional+Model.pdf">404 Product</a></li>
+<% if session[:user_id] %>
+<li><%= link_to 'Orders', orders_path %></li>
+<li><%= link_to 'Products', products_path %></li>
+<li><%= link_to 'Users', users_path %></li>
+<li><%= button_to 'Logout', logout_path, method: :delete %></li>
+<% end %>
     </ul>
   
     </nav>
