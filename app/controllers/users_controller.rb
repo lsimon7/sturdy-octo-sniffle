@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /users
   # GET /users.json
@@ -63,7 +65,7 @@ class UsersController < ApplicationController
   
   rescue_from 'User::Error' do |exception|
    redirect_to users_url, notice: exception.message
-  end
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.

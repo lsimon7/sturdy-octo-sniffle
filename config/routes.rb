@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
+  get 'static_pages/ads'
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -8,11 +14,12 @@ Rails.application.routes.draw do
   delete 'logout' => :destroy
   end
 
-  #get 'admin/index'
-  #get 'sessions/new'
-  #get 'sessions/create'
-  #get 'sessions/destroy'
+  get 'admin/index'
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
 
+  resources :sessions
   resources :users
   resources :orders
   resources :line_items
