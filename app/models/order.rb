@@ -3,7 +3,7 @@ class Order < ApplicationRecord
     "Check" => 0,
     "Credit card" => 1,
     "Purchase order" => 2,
-    "Garbonzo beans" => 3
+
   }
   
   has_many :line_items, dependent: :destroy

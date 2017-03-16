@@ -1,14 +1,14 @@
 
 <% if notice %><p class="alert alert-success" id="notice"><%= notice %></p><% end %>
-<h1>Your Pragmatic Catalog</h1>
+<h1 style="color:blue;">Catalog of Our Greatest Memes of the month</h1>
 
 <table class="table table-responsive">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Price</th>
+      <th style="color:red;">Title</th>
+      <th style="color:yellow;">Description</th>
+     <th style="color:green;">Image_URL</th>
+      <th style="color:purple;">Price</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= (sanitize(produce.description)) %></td>
         <td><%= image_tag(produce.image_url) %></td>
         <td><%= number_to_currency(produce.price) %></td>
-        <td><%= button_to 'Add to Cart', line_items_path(product_id: produce) , class:"btn btn-default" %></td>
+        <td><%= button_to 'Add to Cart', line_items_path(product_id: produce) , class:"btn btn-primary" %></td>
 <!-- would want to delete these old link_tos in production
         <td><%= link_to 'Show', produce , class:"btn btn-xs btn-danger" %>
         <%= link_to 'Edit', edit_product_path(produce) , class:"btn btn-xs btn-danger" %>
@@ -28,6 +28,7 @@
 -->
       </tr>
     <% end %>
+    
   </tbody>
 </table>
-<p>page loaded: Store#index</p>
+  <h3> Act quickly! These products won't be around for too long!</h3> 
